@@ -13,7 +13,8 @@ public class Main {
     
 
     public static void main(String[] args) throws Exception {
-        UserDaoInter userDao = Context.instanceUserDao();
+        //UserDaoInter userDao = Context.instanceUserDao();       //thightly coupling
+        UserDaoInter userDao = Context.instanceUserDao();  //loosely coupling
         User u =userDao.getById(1);
         u.setSurname("Samadov");
         userDao.updateUser(u);

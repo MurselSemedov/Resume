@@ -11,11 +11,17 @@ import java.sql.DriverManager;
  *
  * @author 99470
  */
+
+/*
+
+      DAO----->Data Access Object
+
+*/
 public abstract class AbstractDAO {
     public static Connection connect() throws Exception{
         String url = "jdbc:mysql://localhost:3306/resume";
         String user = "root";
-        String password = "0708832206mM";
+        String password = "1234";
         return DriverManager.getConnection(url, user, password);
     }
 }

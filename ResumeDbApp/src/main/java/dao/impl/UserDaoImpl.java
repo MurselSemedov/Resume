@@ -44,7 +44,12 @@ public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
     @Override
     public boolean updateUser(User u) {
         try ( Connection c = connect()) {
-            PreparedStatement stmt = c.prepareStatement("update user set name =?,surname=?,email=?,phone=? where id = ?");
+            PreparedStatement stmt = c.prepareStatement(""
+                    + "update user set name =?,"
+                    + "surname=?,"
+                    + "email=?,"
+                    + "phone=? "
+                    + "where id = ?");// prepareStatement--------Ignore SQL Enjection
             stmt.setString(1, u.getName());
             stmt.setString(2, u.getSurname());
             stmt.setString(3, u.getEmail());
