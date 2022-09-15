@@ -4,8 +4,7 @@
  */
 package main;
 
-import bean.User;
-import dao.inter.UserDaoInter;
+import dao.inter.SkillDaoInter;
 
 
 public class Main {
@@ -14,9 +13,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         //UserDaoInter userDao = Context.instanceUserDao();       //thightly coupling
-        UserDaoInter userDao = Context.instanceUserDao();  //loosely coupling
-        User u =userDao.getById(1);
-        u.setSurname("Samadov");
-        userDao.updateUser(u);
+        SkillDaoInter dao = Context.instanceSkillDao();
+        System.out.println(dao.getAllSkill());
     }
 }

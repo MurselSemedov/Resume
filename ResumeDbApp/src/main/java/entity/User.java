@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package bean;
+package entity;
+
+import java.sql.Date;
 
 /**
  *
@@ -14,16 +16,51 @@ public class User {
     private String surname;
     private String phone;
     private String email;
+    private Date birthDate;
+    private Country birthPlace;
+    private Country nationality;
 
-    public User(int id, String name, String surname, String phone, String email) {
+    public User(int id, String name, String surname, String email, String phone, Date birthDate, Country birthPlace, Country nationality) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.phone = phone;
         this.email = email;
+        this.birthDate = birthDate;
+        this.birthPlace = birthPlace;
+        this.nationality = nationality;
     }
 
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public Country getBirthPlace() {
+        return birthPlace;
+    }
+
+    public void setBirthPlace(Country birthPlace) {
+        this.birthPlace = birthPlace;
+    }
+
+    public Country getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(Country nationality) {
+        this.nationality = nationality;
+    }
+    
+
     public User() {
+    }
+
+    public User(int id) {
+        this.id = id;
     }
 
     public int getId() {
@@ -68,8 +105,10 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", name=" + name + ", surname=" + surname + ", phone=" + phone + ", email=" + email + '}';
+        return "User{" + "id=" + id + ", name=" + name + ", surname=" + surname + ", phone=" + phone + ", email=" + email + ", birthDate=" + birthDate + ", birthPlace=" + birthPlace + ", nationality=" + nationality + '}';
     }
+
+    
     
     
 }
