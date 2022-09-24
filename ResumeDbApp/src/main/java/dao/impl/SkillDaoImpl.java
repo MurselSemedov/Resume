@@ -7,9 +7,9 @@ package dao.impl;
 import dao.inter.AbstractDAO;
 import static dao.inter.AbstractDAO.connect;
 import dao.inter.SkillDaoInter;
-import entity.Country;
 import entity.Skill;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -43,4 +43,55 @@ public class SkillDaoImpl extends AbstractDAO implements SkillDaoInter{
         return result;
     }
     
+    @Override
+    public boolean updateSkill(Skill skill) {
+        try ( Connection c = connect()) {
+            PreparedStatement stmt = c.prepareStatement( "update skill set name =? where id = ?");
+            stmt.setString(1, skill.getName());
+            stmt.setInt(2, skill.getId());
+            return stmt.execute();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean removeSkill(int skillId) {
+        try ( Connection c = connect()) {
+            Statement stmt = c.createStatement();
+            return stmt.execute("delete from skill where id = " + skillId);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public Skill getById(int skillId) {
+        Skill result = null;
+        try ( Connection c = connect()) {
+            Statement stmt = c.createStatement();
+            stmt.execute("select * from skill where id =" + skillId);
+            ResultSet rs = stmt.getResultSet();
+            while (rs.next()) {
+                result = getSkill(rs);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return result;
+    }
+
+    @Override
+    public boolean addSkill(Skill skill) {
+        try ( Connection c = connect()) {
+            PreparedStatement stmt = c.prepareStatement("insert into skill(name) values(?)");
+            stmt.setString(1, skill.getName());
+            return stmt.execute();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
 }

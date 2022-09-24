@@ -8,8 +8,6 @@ import entity.Country;
 import entity.User;
 import dao.inter.AbstractDAO;
 import dao.inter.UserDaoInter;
-import entity.Skill;
-import entity.UserSkill;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -30,14 +28,16 @@ public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
         String surname = rs.getString("surname");
         String email = rs.getString("email");
         String phone = rs.getString("phone");
+        String profileDescription = rs.getString("profile_description");
         Date birthDate = rs.getDate("birthdate");
         int nationality_id = rs.getInt("nationality_id");
         int birthplace_id = rs.getInt("birthplace_id");
         String nationalityStr = rs.getString("nationality");
-        String birthplaceStr = rs.getString("birthplace");
+        String birthplaceStr = rs.getString("birthplace");   
+        String address  = rs.getString("address");
         Country nationality = new Country(nationality_id, null, nationalityStr);
         Country birthplace = new Country(birthplace_id, birthplaceStr, null);
-        return new User(id, name, surname, email, phone, birthDate, birthplace, nationality);
+        return new User(id, name, surname, email, phone,profileDescription,address, birthDate, birthplace, nationality);
     }
 
     
@@ -48,8 +48,8 @@ public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
             Statement stmt = c.createStatement();
             stmt.execute("select u.* ,c2.name as birthplace,c1.nationality "
                     + "from user u "
-                    + "left join country c1 on c1.id = u.nationality_id "
-                    + "left join country c2 on c2.id = u.birthplace_id");
+                    + " left join country c1 on c1.id = u.nationality_id "
+                    + " left join country c2 on c2.id = u.birthplace_id");
             ResultSet rs = stmt.getResultSet();
             while (rs.next()) {
                 User u = getUser(rs);
@@ -68,13 +68,21 @@ public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
                     + "update user set name =?,"
                     + "surname=?,"
                     + "email=?,"
-                    + "phone=? "
+                    + "phone=?,"
+                    + "profile_description=?,"
+                    + "address=?,"
+                    + "birthplace_id=?,"
+                    + "nationality_id=? "
                     + "where id = ?");// prepareStatement--------Ignore SQL Enjection
             stmt.setString(1, u.getName());
             stmt.setString(2, u.getSurname());
             stmt.setString(3, u.getEmail());
             stmt.setString(4, u.getPhone());
-            stmt.setInt(5, u.getId());
+            stmt.setString(5, u.getProfileDescription());
+            stmt.setString(6, u.getAddress());
+            stmt.setInt(7,u.getBirthPlace().getId());
+            stmt.setInt(8, u.getNationality().getId());
+            stmt.setInt(9, u.getId());
             return stmt.execute();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -99,9 +107,9 @@ public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
         try ( Connection c = connect()) {
             Statement stmt = c.createStatement();
             stmt.execute("select u.* ,c2.name as birthplace,c1.nationality"
-                    + "from user u"
-                    + "left join country c1 on c1.id = u.nationality_id"
-                    + "left join country c2 on c2.id = u.birthplace_id where u.id =" + userId);
+                    + " from user u"
+                    + " left join country c1 on c1.id = u.nationality_id"
+                    + " left join country c2 on c2.id = u.birthplace_id where u.id =" + userId);
             ResultSet rs = stmt.getResultSet();
             while (rs.next()) {
                 result = getUser(rs);

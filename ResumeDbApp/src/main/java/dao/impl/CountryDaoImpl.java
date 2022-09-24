@@ -8,8 +8,8 @@ import dao.inter.AbstractDAO;
 import static dao.inter.AbstractDAO.connect;
 import dao.inter.CountryDaoInter;
 import entity.Country;
-import entity.User;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -41,6 +41,63 @@ public class CountryDaoImpl extends AbstractDAO implements CountryDaoInter{
             ex.printStackTrace();
         }
         return result;
+    }
+
+    @Override
+    public boolean updateCountry(Country country) {
+        try ( Connection c = connect()) {
+            PreparedStatement stmt = c.prepareStatement(""
+                    + "update country set name =?,"
+                    + "nationality=?"          
+                    + "where id = ?");// prepareStatement--------Ignore SQL Enjection
+            stmt.setString(1, country.getName());
+            stmt.setString(2, country.getNationality());
+            stmt.setInt(3, country.getId());
+            return stmt.execute();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean removeCountry(int id) {
+        try ( Connection c = connect()) {
+            Statement stmt = c.createStatement();
+            return stmt.execute("delete from country where id = " + id);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public Country getById(int countryId) {
+        Country result = null;
+        try ( Connection c = connect()) {
+            Statement stmt = c.createStatement();
+            stmt.execute("select * from country where id =" + countryId);
+            ResultSet rs = stmt.getResultSet();
+            while (rs.next()) {
+                result = getCountry(rs);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return result;
+    }
+
+    @Override
+    public boolean addCountry(Country country) {
+        try ( Connection c = connect()) {
+            PreparedStatement stmt = c.prepareStatement("insert into country(name,nationality) values(?,?)");
+            stmt.setString(1, country.getName());
+            stmt.setString(2, country.getNationality());
+            return stmt.execute();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
     }
     
 }

@@ -16,19 +16,31 @@ public class User {
     private String surname;
     private String phone;
     private String email;
+    private String profileDescription;
+    private String address;
     private Date birthDate;
-    private Country birthPlace;
+    private Country birthplace;
     private Country nationality;
+    public String getProfileDescription() {
+        return profileDescription;
+    }
 
-    public User(int id, String name, String surname, String email, String phone, Date birthDate, Country birthPlace, Country nationality) {
+    public void setProfileDescription(String profileDescription) {
+        this.profileDescription = profileDescription;
+    }
+    
+
+    public User(int id, String name, String surname, String email, String phone,String profileDescription,String address, Date birthDate, Country birthPlace, Country nationality) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.phone = phone;
         this.email = email;
+        this.profileDescription = profileDescription;
         this.birthDate = birthDate;
-        this.birthPlace = birthPlace;
+        this.birthplace = birthPlace;
         this.nationality = nationality;
+        this.address = address;
     }
 
     public Date getBirthDate() {
@@ -40,11 +52,11 @@ public class User {
     }
 
     public Country getBirthPlace() {
-        return birthPlace;
+        return birthplace;
     }
 
     public void setBirthPlace(Country birthPlace) {
-        this.birthPlace = birthPlace;
+        this.birthplace = birthPlace;
     }
 
     public Country getNationality() {
@@ -79,6 +91,14 @@ public class User {
         this.name = name;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getSurname() {
         return surname;
     }
@@ -105,8 +125,12 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", name=" + name + ", surname=" + surname + ", phone=" + phone + ", email=" + email + ", birthDate=" + birthDate + ", birthPlace=" + birthPlace + ", nationality=" + nationality + '}';
+        return "User{" + "id=" + id + ", name=" + name + ", surname=" + surname + ", phone=" + phone + ", email=" + email + ", profileDescription=" + profileDescription + ", address=" + address + ", birthDate=" + birthDate + ", birthPlace=" + birthplace + ", nationality=" + nationality + '}';
     }
+
+    
+
+    
 
     
     
