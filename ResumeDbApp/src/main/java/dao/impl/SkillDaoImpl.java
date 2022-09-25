@@ -19,17 +19,18 @@ import java.util.List;
  *
  * @author 99470
  */
-public class SkillDaoImpl extends AbstractDAO implements SkillDaoInter{
+public class SkillDaoImpl extends AbstractDAO implements SkillDaoInter {
 
-   private Skill getSkill(ResultSet rs) throws Exception{
-       int id = rs.getInt("id");
-       String name = rs.getString("name");
-       return new Skill(id, name);
+    private Skill getSkill(ResultSet rs) throws Exception {
+        int id = rs.getInt("id");
+        String name = rs.getString("name");
+        return new Skill(id, name);
     }
+
     @Override
-    public List<Skill> getAllSkill(){
+    public List<Skill> getAllSkill() {
         List<Skill> result = new ArrayList<>();
-        try ( Connection c = connect()) {
+        try (Connection c = connect()) {
             Statement stmt = c.createStatement();
             stmt.execute("select * from skill");
             ResultSet rs = stmt.getResultSet();
@@ -42,11 +43,11 @@ public class SkillDaoImpl extends AbstractDAO implements SkillDaoInter{
         }
         return result;
     }
-    
+
     @Override
     public boolean updateSkill(Skill skill) {
-        try ( Connection c = connect()) {
-            PreparedStatement stmt = c.prepareStatement( "update skill set name =? where id = ?");
+        try (Connection c = connect()) {
+            PreparedStatement stmt = c.prepareStatement("update skill set name =? where id = ?");
             stmt.setString(1, skill.getName());
             stmt.setInt(2, skill.getId());
             return stmt.execute();
@@ -58,7 +59,7 @@ public class SkillDaoImpl extends AbstractDAO implements SkillDaoInter{
 
     @Override
     public boolean removeSkill(int skillId) {
-        try ( Connection c = connect()) {
+        try (Connection c = connect()) {
             Statement stmt = c.createStatement();
             return stmt.execute("delete from skill where id = " + skillId);
         } catch (Exception ex) {
@@ -70,7 +71,7 @@ public class SkillDaoImpl extends AbstractDAO implements SkillDaoInter{
     @Override
     public Skill getById(int skillId) {
         Skill result = null;
-        try ( Connection c = connect()) {
+        try (Connection c = connect()) {
             Statement stmt = c.createStatement();
             stmt.execute("select * from skill where id =" + skillId);
             ResultSet rs = stmt.getResultSet();
@@ -85,10 +86,16 @@ public class SkillDaoImpl extends AbstractDAO implements SkillDaoInter{
 
     @Override
     public boolean addSkill(Skill skill) {
-        try ( Connection c = connect()) {
-            PreparedStatement stmt = c.prepareStatement("insert into skill(name) values(?)");
+        boolean b;
+        try (Connection c = connect()) {
+            PreparedStatement stmt = c.prepareStatement("insert into skill(name) values(?)", Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, skill.getName());
-            return stmt.execute();
+            b = stmt.execute();
+            ResultSet generatedKeys = stmt.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                skill.setId(generatedKeys.getInt(1));
+            }
+            return b;
         } catch (Exception ex) {
             ex.printStackTrace();
             return false;
