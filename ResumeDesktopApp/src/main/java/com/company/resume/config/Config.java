@@ -4,7 +4,7 @@
  */
 package com.company.resume.config;
 
-import entity.User;
+import com.company.entity.User;
 
 /**
  *

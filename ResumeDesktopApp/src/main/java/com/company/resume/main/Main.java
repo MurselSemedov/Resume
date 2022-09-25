@@ -5,9 +5,9 @@
 package com.company.resume.main;
 
 import com.company.resume.config.Config;
-import dao.inter.UserDaoInter;
-import entity.User;
-import main.Context;
+import com.company.dao.inter.UserDaoInter;
+import com.company.entity.User;
+import com.company.main.Context;
 
 /**
  *
@@ -27,6 +27,7 @@ public class Main extends javax.swing.JFrame {
         panelProfile.fillUserComponents();
         panelDetails.fillUserComponents();
         panelSkills.fillUserComponents();
+        panelEmpHistory.fillUserComponents();
     }
 
     private void fillUserComponents() {
@@ -49,6 +50,7 @@ public class Main extends javax.swing.JFrame {
         panelProfile = new com.company.resume.panel.ProfilePanel();
         panelDetails = new com.company.resume.panel.DetailsPanel();
         panelSkills = new com.company.resume.panel.SkillsPanel();
+        panelEmpHistory = new com.company.resume.panel.EmploymentHistoryPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,6 +118,7 @@ public class Main extends javax.swing.JFrame {
         jTabbedPane1.addTab("Profile", panelProfile);
         jTabbedPane1.addTab("Details", panelDetails);
         jTabbedPane1.addTab("Skills", panelSkills);
+        jTabbedPane1.addTab("Employment History", panelEmpHistory);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,7 +139,7 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -158,7 +161,6 @@ public class Main extends javax.swing.JFrame {
         User user = Config.loggedInUser;
         panelProfile.fillUser(user);
         panelDetails.fillUser(user);
-        panelSkills.fillUser(user);
         userDao.updateUser(user);
 
     }//GEN-LAST:event_btnSaveActionPerformed
@@ -206,6 +208,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblSurname;
     private com.company.resume.panel.DetailsPanel panelDetails;
+    private com.company.resume.panel.EmploymentHistoryPanel panelEmpHistory;
     private com.company.resume.panel.ProfilePanel panelProfile;
     private com.company.resume.panel.SkillsPanel panelSkills;
     private javax.swing.JTextField txtName;

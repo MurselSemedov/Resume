@@ -5,7 +5,7 @@
 package com.company.resume.panel;
 
 import com.company.resume.config.Config;
-import entity.User;
+import com.company.entity.User;
 
 /**
  *

@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package main;
+package com.company.main;
 
-import dao.impl.CountryDaoImpl;
-import dao.impl.EmploymentHistoryDaoImpl;
-import dao.impl.SkillDaoImpl;
-import dao.impl.UserDaoImpl;
-import dao.impl.UserSkillDaoImpl;
-import dao.inter.CountryDaoInter;
-import dao.inter.UserDaoInter;
-import dao.inter.UserSkillDaoInter;
-import dao.inter.EmploymentHistoryDaoInter;
-import dao.inter.SkillDaoInter;
+import com.company.dao.impl.CountryDaoImpl;
+import com.company.dao.impl.EmploymentHistoryDaoImpl;
+import com.company.dao.impl.SkillDaoImpl;
+import com.company.dao.impl.UserDaoImpl;
+import com.company.dao.impl.UserSkillDaoImpl;
+import com.company.dao.inter.CountryDaoInter;
+import com.company.dao.inter.UserDaoInter;
+import com.company.dao.inter.UserSkillDaoInter;
+import com.company.dao.inter.EmploymentHistoryDaoInter;
+import com.company.dao.inter.SkillDaoInter;
 
 /**
  *

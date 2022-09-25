@@ -5,16 +5,16 @@
 package com.company.resume.panel;
 
 import com.company.resume.config.Config;
-import dao.inter.SkillDaoInter;
-import dao.inter.UserSkillDaoInter;
-import entity.Skill;
-import entity.User;
-import entity.UserSkill;
+import com.company.dao.inter.SkillDaoInter;
+import com.company.dao.inter.UserSkillDaoInter;
+import com.company.entity.Skill;
+import com.company.entity.User;
+import com.company.entity.UserSkill;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
-import main.Context;
+import com.company.main.Context;
 
 /**
  *
@@ -46,9 +46,7 @@ public class SkillsPanel extends javax.swing.JPanel {
         fillWindow();
     }
 
-    public void fillUser(User user) {
-
-    }
+    
 
     private void fillTable() {
         list = userSkillDao.getAllSkillByUserId(Config.loggedInUser.getId());

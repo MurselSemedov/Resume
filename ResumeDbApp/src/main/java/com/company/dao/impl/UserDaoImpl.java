@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package dao.impl;
+package com.company.dao.impl;
 
-import entity.Country;
-import entity.User;
-import dao.inter.AbstractDAO;
-import dao.inter.UserDaoInter;
+import com.company.entity.Country;
+import com.company.entity.User;
+import com.company.dao.inter.AbstractDAO;
+import com.company.dao.inter.UserDaoInter;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;

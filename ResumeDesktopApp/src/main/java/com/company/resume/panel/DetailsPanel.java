@@ -5,14 +5,14 @@
 package com.company.resume.panel;
 
 import com.company.resume.config.Config;
-import dao.inter.CountryDaoInter;
-import entity.Country;
-import entity.User;
+import com.company.dao.inter.CountryDaoInter;
+import com.company.entity.Country;
+import com.company.entity.User;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import main.Context;
+import com.company.main.Context;
 
 
 /**
