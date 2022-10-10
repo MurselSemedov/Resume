@@ -7,7 +7,7 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
-            <groupId>com.mycompany.resumedbapp</groupId>
+            <groupId>com.company</groupId>
             <artifactId>ResumeDbApp</artifactId>
             <version>1.0</version>
         </dependency>

@@ -42,14 +42,37 @@ public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
 
     
     @Override
-    public List<User> getAllUser() {
+    public List<User> getAllUser(String name,String surname,Integer nId) {
         List<User> result = new ArrayList<>();
         try ( Connection c = connect()) {
-            Statement stmt = c.createStatement();
-            stmt.execute("select u.* ,c2.name as birthplace,c1.nationality "
+            String query = "select u.* ,c2.name as birthplace,c1.nationality "
                     + "from user u "
                     + " left join country c1 on c1.id = u.nationality_id "
-                    + " left join country c2 on c2.id = u.birthplace_id");
+                    + " left join country c2 on c2.id = u.birthplace_id where 1=1";
+            if(name != null && !name.trim().isEmpty()){
+                query += " and u.name=?";
+            }
+            if(surname != null && !surname.trim().isEmpty()){
+                query += " and u.surname=?";
+            }
+            if(nId!=null){
+                query += " and c1.id=?";
+            }
+            System.out.println(query);
+            PreparedStatement stmt = c.prepareStatement(query);
+            int count = 1;
+            if(name!=null&&!name.trim().isEmpty()){
+                stmt.setString(count,name);
+                count++;
+            }
+            if(surname!=null&&!surname.trim().isEmpty()){
+                stmt.setString(count,surname);
+                count++;
+            }
+            if(nId!=null){
+                stmt.setInt(count,nId);
+            }
+            stmt.execute();
             ResultSet rs = stmt.getResultSet();
             while (rs.next()) {
                 User u = getUser(rs);
