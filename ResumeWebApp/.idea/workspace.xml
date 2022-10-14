@@ -10,58 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64c0332d-d30f-425e-86cf-ea97dec67a7f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ResumeDbApp/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeDbApp/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeDbApp/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeDbApp/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeDbApp/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeDbApp/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeDesktopApp/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeDesktopApp/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeDesktopApp/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeDesktopApp/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeDesktopApp/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeDesktopApp/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resumewebapp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeWebApp2/target/ResumeWebApp-1.0.war" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeWebApp2/target/ResumeWebApp-1.0/META-INF/context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeWebApp2/target/ResumeWebApp-1.0/Tomcat.dpf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeWebApp2/target/ResumeWebApp-1.0/WEB-INF/classes/.netbeans_automatic_build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeWebApp2/target/ResumeWebApp-1.0/WEB-INF/classes/com/mycompany/resumewebapp/DetailsController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeWebApp2/target/ResumeWebApp-1.0/WEB-INF/classes/com/mycompany/resumewebapp/MyFavorietServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeWebApp2/target/ResumeWebApp-1.0/WEB-INF/classes/com/mycompany/resumewebapp/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeWebApp2/target/ResumeWebApp-1.0/WEB-INF/lib/ResumeDbApp-1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeWebApp2/target/ResumeWebApp-1.0/WEB-INF/lib/mysql-connector-java-8.0.30.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeWebApp2/target/ResumeWebApp-1.0/WEB-INF/lib/protobuf-java-3.19.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeWebApp2/target/ResumeWebApp-1.0/details.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeWebApp2/target/ResumeWebApp-1.0/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ResumeWebApp2/target/ResumeWebApp-1.0/user.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/resume/controller/ErrorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/resume/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/resume/controller/UserDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/resume/filter/JSPFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/userdetail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/Resume.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_19_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__mysql_mysql_connector_java_8_0_30.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ResumeDbApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ResumeDbApp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ResumeDbApp/src/main/java/com/company/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ResumeDbApp/src/main/java/com/company/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ResumeDbApp/src/main/java/com/company/dao/inter/AbstractDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ResumeDbApp/src/main/java/com/company/dao/inter/AbstractDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ResumeDbApp/src/main/java/com/company/dao/inter/UserDaoInter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ResumeDbApp/src/main/java/com/company/dao/inter/UserDaoInter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ResumeDbApp/src/main/java/com/company/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ResumeDbApp/src/main/java/com/company/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ResumeDesktopApp/ResumeDesktopApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ResumeDesktopApp/ResumeDesktopApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ResumeDesktopApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ResumeDesktopApp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/resumewebapp/DetailsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/resumewebapp/MyFavorietServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/resumewebapp/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/users.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/users.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/users.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -118,6 +86,14 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Workspace\Resume\ResumeWebApp\src\main\webapp" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.company.resume.controller" />
+      <recent name="com.company.resume" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.company.resume.controller" />
+      <recent name="com.mycompany.resumewebapp" />
     </key>
   </component>
   <component name="RunManager">
@@ -225,6 +201,12 @@
       <workItem from="1665122669049" duration="1383000" />
       <workItem from="1665291964292" duration="13156000" />
       <workItem from="1665388292868" duration="1268000" />
+      <workItem from="1665416749621" duration="9561000" />
+      <workItem from="1665488586747" duration="3394000" />
+      <workItem from="1665576994409" duration="807000" />
+      <workItem from="1665641263760" duration="1700000" />
+      <workItem from="1665675638923" duration="1203000" />
+      <workItem from="1665730360852" duration="18284000" />
     </task>
     <servers />
   </component>

@@ -15,7 +15,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
     <link rel="stylesheet" href="assets/css/users.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/9c2a17abb7.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -66,13 +67,20 @@
                 <td><%=u.getNationality().getNationality() == null ? "N/A" : u.getNationality().getNationality()%>
                 </td>
                 <td>
-
-                    <button class="btn btn-danger" type="submit" name="delete" value="Delete">
-                        <i class="fa-solid fa-trash-can" ></i>
-                    </button>
-                    <button class="btn btn-secondary" type="submit" name="update" value="Update" >
-                        <i class="fa-solid fa-square-pen "></i>
-                    </button>
+                    <form action="userdetail" method="POST">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="id" value=<%=u.getId()%>>
+                        <button class="btn btn-danger" type="submit" value="delete">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </form>
+                    <form action="userdetail" method="GET">
+                        <input type="hidden" name="action" value="update">
+                        <input type="hidden" name="id" value=<%=u.getId()%>>
+                        <button class="btn btn-secondary" type="submit" value="update">
+                            <i class="fa-solid fa-square-pen "></i>
+                        </button>
+                    </form>
                 </td>
             </tr>
             <%
