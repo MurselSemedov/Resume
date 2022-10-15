@@ -8,6 +8,7 @@
 <%@page import="com.company.dao.inter.UserDaoInter" %>
 <%@page import="com.company.entity.User" %>
 <%@page import="java.util.List" %>
+<%@ page import="com.company.resume.controller.UserController" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -21,19 +22,11 @@
 </head>
 <body>
 <%
-    UserDaoInter userDao = Context.instanceUserDao();
-    String name = request.getParameter("name");
-    String surname = request.getParameter("surname");
-    String nIdStr = request.getParameter("nId");
-    Integer nationalityId = null;
-    if (nIdStr != null && !nIdStr.trim().isEmpty()) {
-        nationalityId = Integer.parseInt(nIdStr);
-    }
-    List<User> list = userDao.getAllUser(name, surname, nationalityId);
+        List<User> list = (List<User>) request.getAttribute("users");
 %>
 <div class="container my_container">
     <div class="col-4">
-        <form action="users.jsp" method="GET">
+        <form action="users" method="GET">
             <div class="form-group">
                 <label>name:</label>
                 <input type="text" class="form-control" name="name" value="" placeholder="Enter name"/>

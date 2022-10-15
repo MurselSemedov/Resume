@@ -58,7 +58,6 @@ public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
             if(nId!=null){
                 query += " and c1.id=?";
             }
-            System.out.println(query);
             PreparedStatement stmt = c.prepareStatement(query);
             int count = 1;
             if(name!=null&&!name.trim().isEmpty()){

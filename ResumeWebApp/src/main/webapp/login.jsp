@@ -21,12 +21,7 @@
              alt="">
     </div>
     <div>
-        <%
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            if (username==null || !username.equals("mursel") || password == null || !password.equals("mursel123")) {
-        %>
-        <form action="login.jsp" method="POST" class="p-3 mt-3">
+        <form action="login" method="POST" class="p-3 mt-3">
             <div class="form-field d-flex align-items-center">
                 <span class="far fa-user"></span>
 
@@ -39,11 +34,6 @@
             <p><a href>Forgot password?</a></p>
             <button class="btn mt-3">Login</button>
         </form>
-        <%
-            } else {
-                response.sendRedirect("users.jsp");
-            }
-        %>
     </div>
     <div>
         <p>Don't have an account? <a href>Sign Up</a></p>

@@ -9,7 +9,7 @@ import java.io.IOException;
 public class ErrorController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            request.getRequestDispatcher("error.jsp?msg=not found").forward(request,response);
+            request.getRequestDispatcher("error.jsp?msg="+request.getParameter("msg")).forward(request,response);
     }
 
 }
