@@ -4,11 +4,8 @@
     Author     : 99470
 --%>
 
-<%@page import="com.company.main.Context" %>
-<%@page import="com.company.dao.inter.UserDaoInter" %>
 <%@page import="com.company.entity.User" %>
 <%@page import="java.util.List" %>
-<%@ page import="com.company.resume.controller.UserController" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -46,6 +43,8 @@
                 <th>surname</th>
                 <th>nationality</th>
                 <th></th>
+                <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -60,18 +59,29 @@
                 <td><%=u.getNationality().getNationality() == null ? "N/A" : u.getNationality().getNationality()%>
                 </td>
                 <td>
-                    <form action="userdetail" method="POST">
+                    <form  action="userdetail" method="POST" style="width: 5px">
                         <input type="hidden" name="action" value="delete">
                         <input type="hidden" name="id" value=<%=u.getId()%>>
-                        <button class="btn btn-danger" type="submit" value="delete">
+                        <button  class="btn btn-danger" type="submit" value="delete">
                             <i class="fa-solid fa-trash-can"></i>
                         </button>
                     </form>
-                    <form action="userdetail" method="GET">
+                </td>
+                <td>
+                    <form action="userdetail" method="GET" style="width: 5px">
                         <input type="hidden" name="action" value="update">
                         <input type="hidden" name="id" value=<%=u.getId()%>>
                         <button class="btn btn-secondary" type="submit" value="update">
                             <i class="fa-solid fa-square-pen "></i>
+                        </button>
+                    </form>
+                </td>
+                <td>
+                    <form action="userdetail" method="GET">
+                        <input type="hidden" name="action" value="info">
+                        <input type="hidden" name="id" value=<%=u.getId()%>>
+                        <button class="btn btn-info" type="submit" value="info">
+                            <i class="fa-solid fa-circle-info"></i>
                         </button>
                     </form>
                 </td>

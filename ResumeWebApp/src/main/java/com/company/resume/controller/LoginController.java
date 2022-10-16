@@ -28,17 +28,17 @@ public class LoginController extends HttpServlet {
             String password = request.getParameter("password");
             if(username == null ||
                     username.trim().isEmpty() ||
-                    !username.equals("mursel")||
+                    !username.equals("admin")||
                     password == null ||
                     password.trim().isEmpty()||
-                    !password.equals("mursel123")
+                    !password.equals("admin")
             ){
                 throw new IllegalArgumentException("Username or password invalid");
             }
             response.sendRedirect("users");
         } catch (Exception ex) {
             ex.printStackTrace();
-            response.sendRedirect("error?msg=" + ex.getMessage());
+            response.sendRedirect("error?msg=" + ex.getMessage()+"&back=login");
         }
     }
     @Override

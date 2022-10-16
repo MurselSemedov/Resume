@@ -58,7 +58,7 @@ public class UserDetailController extends HttpServlet {
             request.getRequestDispatcher("userdetail.jsp").forward(request, response);
         } catch (Exception ex) {
             ex.printStackTrace();
-            response.sendRedirect("error?msg=" + ex.getMessage());
+            response.sendRedirect("error?msg=" + ex.getMessage()+"&back=userdetail");
         }
 
     }

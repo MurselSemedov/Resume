@@ -42,7 +42,7 @@ public class UserController extends HttpServlet {
             request.getRequestDispatcher("users.jsp").forward(request, response);
         }catch (Exception ex){
             ex.printStackTrace();
-            request.getRequestDispatcher("error.jsp?msg="+ex.getMessage()).forward(request,response);
+            request.getRequestDispatcher("error.jsp?msg="+ex.getMessage()+"&back=users").forward(request,response);
         }
     }
 
