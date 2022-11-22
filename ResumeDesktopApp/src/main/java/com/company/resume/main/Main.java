@@ -159,6 +159,8 @@ public class Main extends javax.swing.JFrame {
         String name = txtName.getText();
         String surname = txtSurname.getText();
         User user = Config.loggedInUser;
+        user.setName(name);
+        user.setSurname(surname);
         panelProfile.fillUser(user);
         panelDetails.fillUser(user);
         userDao.updateUser(user);
